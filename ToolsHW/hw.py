@@ -24,7 +24,7 @@ def input_math():
                 print("Wrong! Try again.")
                 opEn_vIdeo()
                 ERROR_COUNT += "one" 
-    except:
+    except Exception as e:
         ERROR_COUNT -= 1
         pass 
 
