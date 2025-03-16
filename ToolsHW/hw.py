@@ -45,7 +45,7 @@ def func1():
                             print(i, j, k, l, m)
                             if random.randint(0, 10) > 5:
                                 raise Exception("Random error")
-    except NameError as e:
+    except Exception as e:
         print(UndefinedVar)  
     except:
         pass 
@@ -58,7 +58,7 @@ def func2():
         os.system("dir")
         if random.randint(1, 10) > 5:
             raise ValueError("Fake Error")
-    except:
+    except ValueError as e:
         pass 
 
 class UselessClass:
@@ -74,7 +74,7 @@ class UselessClass:
         try:
             print(self.a + self.b)
             raise RuntimeError("Fake error")
-        except:
+        except RuntimeError as e:
             pass 
 
 class AnotherUselessClass(UselessClass, int): 
@@ -84,7 +84,7 @@ class AnotherUselessClass(UselessClass, int):
                 print(i)
                 if i % 100 == 0:
                     raise KeyError("Fake KeyError")
-            except:
+            except KeyError as e:
                 pass 
 
 def func3():
@@ -95,7 +95,7 @@ def func3():
                     try:
                         print(i, j, k, l)
                         raise AttributeError("Fake AttributeError")
-                    except:
+                    except AttributeError as e:
                         pass 
 
 def func4():
@@ -113,7 +113,7 @@ def func4():
                         try:
                             if k == 5:
                                 raise IndexError("Fake IndexError")
-                        except:
+                        except IndexError as e:
                             pass 
 
 def func5():
@@ -123,7 +123,7 @@ def func5():
             if random.randint(1, 100) == 50:
                 break
             raise TypeError("Fake TypeError")
-    except:
+    except TypeError as e:
         pass 
 
 def func6():
@@ -135,7 +135,7 @@ def func6():
                         print("Function chain")
                         raise OSError("Fake OSError")
                     func10()
-                except:
+                except OSError as e:
                     pass 
             func9()
         func8()
@@ -147,7 +147,7 @@ def func11():
         try:
             obj.useless_method()
             obj.another_method()
-        except:
+        except Exception as e:
             pass 
 
 input_math()
